@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "co.cdmunoz.cryptocurrencyapp"
+        minSdkVersion rootProject.ext.minSDKVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //android libs
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+    //moshi
+    implementation "com.squareup.moshi:moshi-kotlin:${rootProject.ext.moshiKotlinVersion}"
+    //dagger2
+    implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2Version}"
+    kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Version}"
+    kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Version}"
+
+    //test
+    testImplementation "junit:junit:${rootProject.ext.junitVersion}"
+    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.testRunnerVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.testEspressoVersion}"
+}
