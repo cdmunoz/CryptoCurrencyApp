@@ -33,6 +33,12 @@ dependencies {
     implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2Version}"
     kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Version}"
     kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Version}"
+    //Room
+    implementation "android.arch.persistence.room:runtime:${rootProject.ext.archVersion}"
+    kapt "android.arch.persistence.room:compiler:${rootProject.ext.archVersion}"
+    //Lifecycle
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.archVersion}"
+    kapt "android.arch.lifecycle:compiler:${rootProject.ext.archVersion}"
 
     //test
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"
