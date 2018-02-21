@@ -29,16 +29,24 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
     //moshi
     implementation "com.squareup.moshi:moshi-kotlin:${rootProject.ext.moshiKotlinVersion}"
+    implementation "com.squareup.moshi:moshi-adapters:${rootProject.ext.moshiKotlinVersion}"
     //dagger2
     implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2Version}"
     kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Version}"
     kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Version}"
     //Room
-    implementation "android.arch.persistence.room:runtime:${rootProject.ext.archVersion}"
-    kapt "android.arch.persistence.room:compiler:${rootProject.ext.archVersion}"
+    implementation "android.arch.persistence.room:runtime:${rootProject.ext.archRoomVersion}"
+    kapt "android.arch.persistence.room:compiler:${rootProject.ext.archRoomVersion}"
     //Lifecycle
-    implementation "android.arch.lifecycle:extensions:${rootProject.ext.archVersion}"
-    kapt "android.arch.lifecycle:compiler:${rootProject.ext.archVersion}"
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.archLifecycleVersion}"
+    kapt "android.arch.lifecycle:compiler:${rootProject.ext.archLifecycleVersion}"
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-moshi:${rootProject.ext.moshiConverterVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.rxJavaAdapterVersion}"
+    //RxJava RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJava2Version}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
 
     //test
     testImplementation "junit:junit:${rootProject.ext.junitVersion}"

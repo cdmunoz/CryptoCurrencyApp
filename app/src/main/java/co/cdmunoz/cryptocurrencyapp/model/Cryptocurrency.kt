@@ -12,7 +12,7 @@ data class Cryptocurrency(
 
     @Json(name = "id")
     @PrimaryKey
-    val id: Int,
+    val id: String,
 
     @Json(name = "name")
     val name: String? = null,
@@ -21,7 +21,7 @@ data class Cryptocurrency(
     val symbol: String = "",
 
     @Json(name = "rank")
-    val rank: String? = null,
+    val rank: Int = 0,
 
     @Json(name = "price_usd")
     val priceUsd: String = "",
