@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import co.cdmunoz.cryptocurrencyapp.di.component.DaggerAppComponent
 import co.cdmunoz.cryptocurrencyapp.di.modules.AppModule
+import co.cdmunoz.cryptocurrencyapp.di.modules.NetModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -17,7 +18,10 @@ class CryptocurrencyApplication: Application(), HasActivityInjector {
   override fun onCreate() {
     super.onCreate()
 
-    DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
+    DaggerAppComponent.builder()
+        .appModule(AppModule(this))
+        .netModule(NetModule(BuildConfig.URL))
+        .build().inject(this)
   }
 
   override fun activityInjector(): AndroidInjector<Activity> = activityInjector

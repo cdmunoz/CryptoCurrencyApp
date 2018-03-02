@@ -1,6 +1,6 @@
-package co.cdmunoz.cryptocurrencyapp.api
+package co.cdmunoz.cryptocurrencyapp.data.source.remote
 
-import co.cdmunoz.cryptocurrencyapp.model.Cryptocurrency
+import co.cdmunoz.cryptocurrencyapp.data.Cryptocurrency
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -14,7 +14,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField 'String', 'URL', '"https://api.coinmarketcap.com/v1/"'
+        }
         release {
+            buildConfigField 'String', 'URL', '"https://api.coinmarketcap.com/v1/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -36,10 +40,13 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Version}"
     //Room
     implementation "android.arch.persistence.room:runtime:${rootProject.ext.archRoomVersion}"
+    implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.archRoomVersion}"
     kapt "android.arch.persistence.room:compiler:${rootProject.ext.archRoomVersion}"
     //Lifecycle
     implementation "android.arch.lifecycle:extensions:${rootProject.ext.archLifecycleVersion}"
     kapt "android.arch.lifecycle:compiler:${rootProject.ext.archLifecycleVersion}"
+    //RxJava 2 LiveData
+    implementation "android.arch.lifecycle:reactivestreams:${rootProject.ext.archLifecycleVersion}"
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
     implementation "com.squareup.retrofit2:converter-moshi:${rootProject.ext.moshiConverterVersion}"

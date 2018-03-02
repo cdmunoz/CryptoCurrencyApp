@@ -1,6 +1,6 @@
 package co.cdmunoz.cryptocurrencyapp.di.modules
 
-import co.cdmunoz.cryptocurrencyapp.CryptocurrenciesActivity
+import co.cdmunoz.cryptocurrencyapp.ui.list.CryptocurrenciesActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
