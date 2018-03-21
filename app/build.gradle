@@ -31,6 +31,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:cardview-v7:${rootProject.ext.supportLibVersion}"
     //moshi
     implementation "com.squareup.moshi:moshi-kotlin:${rootProject.ext.moshiKotlinVersion}"
     implementation "com.squareup.moshi:moshi-adapters:${rootProject.ext.moshiKotlinVersion}"

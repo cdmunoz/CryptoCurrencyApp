@@ -8,6 +8,8 @@ import android.arch.persistence.room.migration.Migration
 import co.cdmunoz.cryptocurrencyapp.data.source.local.CryptocurrenciesDao
 import co.cdmunoz.cryptocurrencyapp.data.source.local.Database
 import co.cdmunoz.cryptocurrencyapp.ui.list.CryptocurrenciesViewModelFactory
+import co.cdmunoz.cryptocurrencyapp.utils.Constants
+import co.cdmunoz.cryptocurrencyapp.utils.Utils
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -32,7 +34,7 @@ class AppModule(val app: Application) {
   @Provides
   @Singleton
   fun provideCryptocurrenciesDatabase(app: Application): Database = Room.databaseBuilder(app,
-      Database::class.java, "cryptocurrencies_db")
+      Database::class.java, Constants.DATABASE_NAME)
       /*.addMigrations(MIGRATION_1_2)*/
       .fallbackToDestructiveMigration()
       .build()
@@ -43,6 +45,11 @@ class AppModule(val app: Application) {
       database: Database): CryptocurrenciesDao = database.cryptocurrenciesDao()
 
   @Provides
+  @Singleton
   fun provideCryptocurrenciesViewModelFactory(
       factory: CryptocurrenciesViewModelFactory): ViewModelProvider.Factory = factory
+
+  @Provides
+  @Singleton
+  fun provideUtils(): Utils = Utils(app)
 }
