@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">CryptoCurrency App</string>
+  <string name="cryptocurrency_text">Cryptocurrency</string>
+  <string name="cryptocurrency_error_message">There is an error getting the data: \n</string>
 </resources>
